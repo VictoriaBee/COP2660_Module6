@@ -37,6 +37,8 @@ class PodcastActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_podcast)
 
+        val TAG = javaClass.simpleName
+
         setupToolbar()
         setupViewModels()
         updateControls()
@@ -78,12 +80,12 @@ class PodcastActivity : AppCompatActivity(),
             podcastListAdapter.setSearchData(results)
         }
     }
+
     // Takes in an Intent and checks to see if it's an ACTION_SEARCH;
     // If so, extracts search query and passes to performSearch().
     private fun handleIntent(intent: Intent) {
         if (Intent.ACTION_SEARCH == intent.action) {
-            val query = intent.getStringExtra(SearchManager.QUERY) ?:
-            return
+            val query = intent.getStringExtra(SearchManager.QUERY) ?: return
             performSearch(query)
         }
     }
@@ -126,6 +128,7 @@ class PodcastActivity : AppCompatActivity(),
         podcastRecyclerView.adapter = podcastListAdapter
     }
 
+    // Methods for the progress bar.
     private fun showProgressBar() {
         progressBar.visibility = View.VISIBLE
     }
@@ -159,8 +162,7 @@ class PodcastActivity : AppCompatActivity(),
 
     // Either creates the details Fragment or
     // uses an existing instance if one exists.
-    private fun createPodcastDetailsFragment():
-        PodcastDetailsFragment {
+    private fun createPodcastDetailsFragment(): PodcastDetailsFragment {
         // 1 - Checks if Fragment already exists.
         var podcastDetailsFragment = supportFragmentManager
             .findFragmentByTag(TAG_DETAILS_FRAGMENT) as
