@@ -8,6 +8,7 @@ import com.raywenderlich.podplay.util.DateUtils
 
 class SearchViewModel (application: Application) :
         AndroidViewModel(application) {
+    // Property to fetch the info.
       var iTunesRepo: ItunesRepo? = null
 
     // Defines data class that only has data necessary for the View.
@@ -19,7 +20,7 @@ class SearchViewModel (application: Application) :
 
     // Helper method to convert from raw model data to view data.
     private fun itunesPodcastToPodcastSummaryView(
-        itunesPodcast: PodcastResponse.ItunesPodcast) : // Sp???
+        itunesPodcast: PodcastResponse.ItunesPodcast) :
         PodcastSummaryViewData {
         return PodcastSummaryViewData(
             itunesPodcast.collectionCensoredName,

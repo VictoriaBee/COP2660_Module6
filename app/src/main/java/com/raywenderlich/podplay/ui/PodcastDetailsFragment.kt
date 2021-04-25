@@ -31,8 +31,7 @@ class PodcastDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         return inflater.inflate(
             R.layout.fragment_podcast_details,
             container, false)
@@ -57,8 +56,7 @@ class PodcastDetailsFragment : Fragment() {
         feedTitleTextView.text = viewData.feedTitle
         feedDescTextView.text = viewData.feedDesc
         activity?.let { activity ->
-            Glide.with(activity).load(viewData.imageUrl)
-                .into(feedImageView)
+            Glide.with(activity).load(viewData.imageUrl).into(feedImageView)
         }
     }
 

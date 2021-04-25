@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
     id 'kotlin-android-extensions'
 }
 
@@ -58,7 +59,7 @@ dependencies {
     implementation "androidx.activity:activity-ktx:1.1.0"
 
     // To use Glide to display images.
-    implementation "com.github.bumptech.glide:glide:4.1.0"
+    implementation "com.github.bumptech.glide:glide:4.11.0"
 
     // Gives Fragment access to the main podcast view model.
     implementation "androidx.fragment:fragment-ktx:1.2.2"

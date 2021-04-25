@@ -21,7 +21,8 @@
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/Theme.PodPlay.PopupOverlay"/>
 
-        <!-- Container that holds the podcast detail Fragment. -->
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Container that holds the podcast detail Fragment. -->
         <FrameLayout
             android:id="@+id/podcastDetailsContainer"
             android:layout_width="0dp"
@@ -55,5 +56,4 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
-    </com.google.android.material.appbar.AppBarLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

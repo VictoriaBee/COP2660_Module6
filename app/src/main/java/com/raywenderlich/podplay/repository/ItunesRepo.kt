@@ -7,7 +7,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-// 1
+// 1 - Service that makes the repository happen.
 class ItunesRepo(private val itunesService: ItunesService) {
     // 2 - Defines single parameter as a List of iTunesPodcast objects.
     fun searchByTerm(term: String,
@@ -19,7 +19,7 @@ class ItunesRepo(private val itunesService: ItunesService) {
             // 5 - Is called if anything goes wrong with the call,
             // like network failure or invalid URL.
             override fun onFailure(call: Call<PodcastResponse>,
-                                   t: Throwable) {
+                                   t: Throwable?) {
                 // 6 - If error, callBack() is null.
                 callBack(null)
             }

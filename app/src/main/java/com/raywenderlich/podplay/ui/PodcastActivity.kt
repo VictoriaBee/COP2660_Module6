@@ -59,7 +59,8 @@ class PodcastActivity : AppCompatActivity(),
                 as SearchManager
         // 4 - SearchManager loads the search configuration and
         // assigns it to the searchView.
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(
+            componentName))
 
         if (supportFragmentManager.backStackEntryCount > 0) {
             podcastRecyclerView.visibility = View.INVISIBLE
@@ -124,7 +125,8 @@ class PodcastActivity : AppCompatActivity(),
             podcastRecyclerView.context, layoutManager.orientation)
         podcastRecyclerView.addItemDecoration(dividerItemDecoration)
 
-        podcastListAdapter = PodcastListAdapter(null, this, this)
+        podcastListAdapter = PodcastListAdapter(
+            null, this, this)
         podcastRecyclerView.adapter = podcastListAdapter
     }
 
